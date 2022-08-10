@@ -3,3 +3,6 @@ Final capstone project for ASU Fintech Bootcamp
 
 
 # WORK IN PROGRESS FILES ARE NOT COMPLETE!!!
+Monitor my progress below:
+
+https://richiegarafola-project3-nfadashboard-ib5cxr.streamlitapp.com/
