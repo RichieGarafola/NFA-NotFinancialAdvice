@@ -9,17 +9,25 @@ pragma solidity ^0.8.4;
 
 // Import the `ERC1155` 'ERC1155Burnable',  `ERC1155Supply`, 'Ownable', and 'Pausable' contracts from OpenZeppelin. These contracts implement the `ERC1155` standards that we’ll use to build our contract. Import these contracts by using the following code:
 
-import "@openzeppelin/contracts@4.7.2/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts@4.7.2/access/Ownable.sol";
-import "@openzeppelin/contracts@4.7.2/security/Pausable.sol";
-import "@openzeppelin/contracts@4.7.2/token/ERC1155/extensions/ERC1155Burnable.sol";
-import "@openzeppelin/contracts@4.7.2/token/ERC1155/extensions/ERC1155Supply.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/Pausable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
+
 
 // Define a contract named `NFAToken` that inherits the OpenZeppelin `ERC1155` 'ERC1155Burnable',  `ERC1155Supply`, 'Ownable', and 'Pausable' contracts.
-contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply {
+contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply
+ {
     // Use the following code to create a constructor that will configure the `NFAToken` contract and the `ERC1155` 'ERC1155Burnable',  `ERC1155Supply`, 'Ownable', and 'Pausable' contract:
-    constructor() ERC1155("") {}
-    
+        uint256 public constant GOLD = 0;
+        uint256 public constant SILVER = 1;
+        uint256 public constant BRONZE = 2;
+    constructor() ERC1155("") {
+        _mint(msg.sender, GOLD, 20, "");
+        _mint(msg.sender, SILVER, 50, "");
+        _mint(msg.sender, BRONZE, 100, "");
+    }
     function setURI(
         string memory newuri
         ) 
@@ -35,17 +43,6 @@ contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply 
         _unpause();
     }
 
-    function mint(
-        address account,
-        uint256 id, 
-        uint256 amount, 
-        bytes memory data
-        )
-        public
-        onlyOwner
-    {
-        _mint(account, id, amount, data);
-    }
 
     function mintBatch(
         address to, 
@@ -57,6 +54,17 @@ contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply 
         onlyOwner
     {
         _mintBatch(to, ids, amounts, data);
+    }
+    function mint(
+        address account,
+        uint256 id, 
+        uint256 amount, 
+        bytes memory data
+        )
+        public
+       // onlyOwner
+    {
+        _mint(account, id, amount, data);
     }
 
     function _beforeTokenTransfer(
@@ -81,7 +89,7 @@ contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply 
             );
         require(
             from == address(0) || to == address(0), 
-            "This NFT is not transferrable"
+            "Not allowed to transfer token"
             );
     }
 }

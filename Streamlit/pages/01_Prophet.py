@@ -13,13 +13,15 @@ st.set_page_config(
 )
 
 # dashboard title
-st.title("NotFinanialAdvice Streamlit Finance Dashboard")
+# st.title("NotFinanialAdvice Streamlit Finance Dashboard")
+st.title("NotFinanialAdvice")
+
 
 tickers = ('AXP', 'AMGN', 'AAPL', 'BA', 'CAT', 'CSCO', 'CVX', 'GS',	'HD', 'HON', 'IBM', 'INTC', 'JNJ', 'KO', 'JPM', 'MCD', 'MMM', 'MRK', 'MSFT', 'NKE', 'PG', 'TRV', 'UNH','CRM', 'VZ', 'V', 'WBA', 'WMT', 'DIS', 'DOW')
-dropdown = st.selectbox('Pick your asset', tickers)
+dropdown = st.sidebar.selectbox('Pick your asset', tickers)
 
-start = st.date_input('Start', value = pd.to_datetime('2021-01-01'))
-end = st.date_input('End', value = pd.to_datetime('today'))
+start = st.sidebar.date_input('Start', value = pd.to_datetime('2021-01-01'))
+end = st.sidebar.date_input('End', value = pd.to_datetime('today'))
 
 df = yf.download(dropdown,start,end).Close
 
@@ -65,22 +67,54 @@ forecast_future_month = forecast_future_month.rename(
     }
 )
 
-
+############################################
 # Dashboard 
-st.title("Prophet Forecast")
-st.pyplot(model_dow.plot(foreccast_dow_figures))
 
-st.title(f"{dropdown} Prophet Forecast Predictions")
+############################################
+# plot 1 not sccaled 
+# st.title("Prophet Forecast")
+# st.pyplot(model_dow.plot(foreccast_dow_figures))
+
+# plot 2 not scaled
+# st.title(f"{dropdown} Prophet Forecast Predictions")
+# fig, ax = plt.subplots()
+# ax.plot(forecast_dow_predictions)
+# ax.legend(['yhat', 'yhat_lower', 'yhat_upper'])
+# st.pyplot(fig)
+
+# plot 3 not scaled 
+# st.pyplot(figures)
+
+st.header(f"{dropdown} Prophet Forecast Predictions")
 fig, ax = plt.subplots()
 ax.plot(forecast_dow_predictions)
 ax.legend(['yhat', 'yhat_lower', 'yhat_upper'])
-st.pyplot(fig)
 
-st.pyplot(figures)
+col1, col2, col3 = st.columns(3)
 
-# Review the last five rows of the DataFrame
-st.write("The last 5 days",forecast_future_month.tail())
+col1.subheader(f"{dropdown} Prophet Forecast")
+col1.pyplot(model_dow.plot(foreccast_dow_figures))
 
-# Display the average forecasted price 
-st.write("Average Forecasted price for the last 20 days", forecast_future_month.mean())
+col2.subheader(f"{dropdown} Prophet Forecast Predictions")
+col2.pyplot(fig)
+
+col3.subheader("Prophet Trends")
+col3.pyplot(figures)
+
+
+
+col1, col2 = st.columns(2)
+
+col1.subheader("3 week forecast")
+col1.write(forecast_future_month)
+
+col2.subheader("Average Forecasted price for the next 21 days")
+col2.write(forecast_future_month.mean())
+
+
+# # Review the last five rows of the DataFrame
+# st.write("The last 5 days",forecast_future_month.tail())
+
+# # Display the average forecasted price 
+# st.write("Average Forecasted price for the last 20 days", forecast_future_month.mean())
 

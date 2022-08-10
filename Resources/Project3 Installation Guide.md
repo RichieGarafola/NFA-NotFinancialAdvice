@@ -115,6 +115,7 @@ matplotlib utilities for the visualization, and visual analysis, of financial da
 pip install mplfinance
 ```
 
+
 8. Run the following commands to confirm installation of all project3 packages. Look for version numbers with at least the following versions.  
 
 ```shell
