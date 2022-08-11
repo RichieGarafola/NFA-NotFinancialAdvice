@@ -59,7 +59,7 @@ if len(dropdown) > 0:
 ############################################
 
 # Use the Pathlib libary to set the path to the CSV
-csv_path = Path('Desktop/project 3/Project3/Richie/Streamlit/Resources/fundamental_info_df.csv')
+csv_path = Path('Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/fundamental_info_df.csv')
 
 # Use the file path to read the CSV into a DataFrame
 fundamental_info_df = pd.read_csv(csv_path, index_col = 'symbol')
@@ -117,5 +117,5 @@ analysis_dropdown = analysis_dropdown.strip("''")
 st.table(getattr(yf.Ticker(dropdown2),analysis_dropdown))
 
 
-# st.caption('Created by Richie Garafola, Mark Staten, Jacob Edelbrock 8/22')
 
+# st.caption('Created by Richie Garafola, Mark Staten, Jacob Edelbrock 8/22')

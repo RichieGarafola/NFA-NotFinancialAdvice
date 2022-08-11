@@ -11,8 +11,8 @@ import snscrape.modules.twitter as sntwitter
 
 nltk.download('vader_lexicon')
 
-st.title("Twitter NLP Scraper")
 
+st.title("Twitter NLP Scraper")
 # Get user input
 query = st.sidebar.text_input("Search word: ")
 df=pd.DataFrame()
@@ -56,11 +56,14 @@ def percentage(part,whole):
 positive = 0
 negative = 0
 neutral = 0
+sentiment = 0
+
 # Initialize open buckets as holder for list
 tweet_list1 = []
 neutral_list = []
 negative_list = []
 positive_list = []
+sentiment_list = []
 
 # Iterating over the tweets in the dataframe
 for tweet in df['Text']:
@@ -76,16 +79,24 @@ for tweet in df['Text']:
         negative_list.append(tweet)
         #increases the count by 1
         negative += 1 
+         # if sentiment is negative, call it -1 and append it to the sentiment_list
+        sentiment_list.append(-1)
+        sentiment += 1
     elif pos > neg: 
         # append the tweet that satisfies 'positive_list' conditions
         positive_list.append(tweet)
         #increase the count by 1
         positive += 1 
+         # if sentiment is positive, call it 1 and append it to the sentiment_list
+        sentiment_list.append(1)
+        sentiment += 1
     elif pos == neg:
         # append the tweet that satisfies 'neutral_list' conditions
         neutral_list.append(tweet) 
         #increase the count by 1 
         neutral += 1 
+        
+
                 
 # Percent Positive
 positive = percentage(positive, len(df)) 
@@ -131,3 +142,7 @@ def word_cloud(text):
 
 st.write('Wordcloud for ' + query)
 word_cloud(df['Text'].values)
+
+
+
+
