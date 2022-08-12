@@ -16,6 +16,8 @@ import matplotlib.pyplot as plt
 
 # NLTK VADER for sentiment analysis on the news headlines
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import nltk
+nltk.download('vader_lexicon')
 
 # wordcloud and stop words
 from wordcloud import WordCloud, STOPWORDS
