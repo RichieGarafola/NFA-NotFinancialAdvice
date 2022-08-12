@@ -1,17 +1,25 @@
+# Dashboard
 import streamlit as st
+
 # get data
 from urllib.request import urlopen, Request
 
 # parse data from FinViz 
 from bs4 import BeautifulSoup
 import os
+
 # manipulate and store the data in DataFrames
 import pandas as pd
+
 # plot the sentiment on a chart
 import matplotlib.pyplot as plt
 
 # NLTK VADER for sentiment analysis on the news headlines
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# wordcloud and stop words
+from wordcloud import WordCloud, STOPWORDS
+
 
 # take the raw part of the url, we will append the ticker to the end of the link to pull up its data
 # Extract data from finviz use the raw url.
@@ -69,80 +77,77 @@ for index, table_row in enumerate(stock_tr):
     # Create a dataframe using the 'title_list'
     finviz_headlines = pd.DataFrame(title_list, columns=[['ticker', 'date', 'time', 'title']])
     
-# Percentage 
-def percentage(part,whole):
-    return 100 * float(part)/float(whole)
+st.write(finviz_headlines)
+    
+# Sentiment calculation based on compound score
+def get_sentiment(score):
+    """
+    Calculates the sentiment based on the compound score.
+    """
+    result = 0  # Neutral by default
+    if score >= 0.05:  # Positive
+        result = 1
+    elif score <= -0.05:  # Negative
+        result = -1
+
+    return result
 
 
-# Initialize Values
-positive = 0
-negative = 0
-neutral = 0
+# Create the sentiment scores DataFrame
+analyzer = SentimentIntensityAnalyzer()
+
+title_sent = {
+    "title_compound": [],
+    "title_pos": [],
+    "title_neu": [],
+    "title_neg": [],
+    "title_sent": [],
+}
 
 
-# Initialize open buckets as holder for list
-title_list = []
-neutral_list = []
-negative_list = []
-positive_list = []
+# Get sentiment for the title
+for index, row in finviz_headlines.iterrows():
+    try:
+        # Sentiment scoring with VADER
+        title_sentiment = analyzer.polarity_scores(row["title"])
+        title_sent["title_compound"].append(title_sentiment["compound"])
+        title_sent["title_pos"].append(title_sentiment["pos"])
+        title_sent["title_neu"].append(title_sentiment["neu"])
+        title_sent["title_neg"].append(title_sentiment["neg"])
+        title_sent["title_sent"].append(get_sentiment(title_sentiment["compound"]))
+    except AttributeError:
+        pass
 
-# Iterating over the titles in the dataframe
-for title in finviz_headlines['title']:
-    title_list.append(title)
-    analyzer = SentimentIntensityAnalyzer().polarity_scores(title)
-    neg = analyzer['neg']
-    neu = analyzer['neu']
-    pos = analyzer['pos']
-    comp = analyzer['compound']
 
-    if neg > pos:
-        # append the headline that satisfies 'negative_list' conditions
-        negative_list.append(title)
-        #increases the count by 1
-        negative += 1 
-         # if sentiment is negative, call it -1 and append it to the sentiment_list
-        sentiment_list.append(-1)
-        sentiment += 1
-    elif pos > neg: 
-        # append the tweet that satisfies 'positive_list' conditions
-        positive_list.append(title)
-        #increase the count by 1
-        positive += 1 
-         # if sentiment is positive, call it 1 and append it to the sentiment_list
-        sentiment_list.append(1)
-        sentiment += 1
-    elif pos == neg:
-        # append the tweet that satisfies 'neutral_list' conditions
-        neutral_list.append(title) 
-        #increase the count by 1 
-        neutral += 1 
-               
-# Percent Positive
-positive = percentage(positive, len(finviz_headlines)) 
-# Percent Negative 
-negative = percentage(negative, len(finviz_headlines)) 
-# Percent Neutral
-neutral = percentage(neutral, len(finviz_headlines)) 
+# Attaching sentiment columns to the News DataFrame
+title_sentiment_df = pd.DataFrame(title_sent)
+finviz_headlines = finviz_headlines.join(title_sentiment_df)
 
-#Convert the lists to pandas dataframe 'title_list', 'neutral_list', 'negative_list', 'positive_list'
-title_list = pd.DataFrame(title_list)
-neutral_list = pd.DataFrame(neutral_list)
-negative_list = pd.DataFrame(negative_list)
-positive_list = pd.DataFrame(positive_list)
+st.write(finviz_headlines.describe())
 
-# print("Since " + number_of_days + " days, there have been", len(tweet_list1) ,  "tweets on " + query,'\n*')
-print("Positive Sentiment:", '%.2f' % len(positive_list),'\n*')
-print("Neutral Sentiment:", '%.2f' % len(neutral_list), '\n*')
-print("Negative Sentiment:", '%.2f' % len(negative_list), '\n*')
+###
+# ADD PIE CHART FROM TWITTER!!
+###
 
-#Create the PieCart
-labels = ['Positive ['+str(round(positive))+'%]' , 'Neutral ['+str(round(neutral))+'%]','Negative ['+str(round(negative))+'%]']
-sizes = [positive, neutral, negative]
-colors = ['yellowgreen', 'blue','red']
-patches, texts = plt.pie(sizes,colors=colors, startangle=90)
-plt.style.use('default')
-plt.legend(labels)
-plt.title("Sentiment Analysis Result for keyword= "+query+"" )
-plt.axis('equal')
-plt.show()
-st.pyplot(plt)
+def word_cloud(text):
+    stopwords = set(STOPWORDS)
+    allWords = ' '.join([title for title in text])
+    wordCloud = WordCloud(background_color='black',width = 1600, height = 800,stopwords = stopwords,min_font_size = 20,max_font_size=150,colormap='prism').generate(allWords)
+    fig, ax = plt.subplots(figsize=(20,10), facecolor='k')
+    plt.imshow(wordCloud)
+    ax.axis("off")
+    fig.tight_layout(pad=0)
+    plt.show()
+    st.pyplot(plt)
+word_cloud(finviz_headlines[('title',)].values)
+
+
+
+
+
+
+
+
+
+
+
