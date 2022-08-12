@@ -1,30 +1,30 @@
 # NFA - NotFinancialAdvice
-# project3 Installation Guide
+# NFA Installation Guide
 
 
-project3 is a Python time series package that provides a single platform to access multiple time series packages, including prophet, … etc.
-Follow the steps below to install and set up Project3 in your Python environment. 
+NFA is a Python time series package that provides a single platform to access multiple time series packages, including prophet, … etc.
+Follow the steps below to install and set up NFA in your Python environment. 
 
 
 **NOTE:** Make sure that you are using your conda environment that has anaconda installed. Create a new environment for this, using:
 
 ```shell
 conda update anaconda
-conda create -n project3 python=3.7 anaconda -y
-conda activate project3
+conda create -n NFA python=3.7 anaconda -y
+conda activate NFA
 ```
 
-Before installing the project3 dependencies, you need to install a couple of libraries. First, install the `nb_conda` package that will allow you to switch between virtual environments in Jupyter lab.
+Before installing the NFA dependencies, you need to install a couple of libraries. First, install the `nb_conda` package that will allow you to switch between virtual environments in Jupyter lab.
 
 ```shell
 conda install -c anaconda nb_conda -y
 ```
 
-Follow the next steps to install project3 and all its dependencies in your Python virtual environment.
+Follow the next steps to install NFA and all its dependencies in your Python virtual environment.
 
 ---
 
-1. Download the project3 library **Prophet**. 
+1. Download the NFA library **Prophet**. 
 *from prophet import Prophet*
 
 Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. It works best with time series that have strong seasonal effects and several seasons of historical data. Prophet is robust to missing data and shifts in the trend, and typically handles outliers well
@@ -48,7 +48,7 @@ pip install prophet
 
 ---
 
-2. Download the project3 library **pandas-datareader**
+2. Download the NFA library **pandas-datareader**
 *import pandas_datareader as pdr*
 
 Pandas Datareader is a Python package that allows us to create a pandas DataFrame object by using various data sources from the internet. It is popularly used for working with realtime stock price datasets. Some popular data sources available on the internet including:
@@ -71,7 +71,7 @@ https://pydata.github.io/pandas-datareader/py-modindex.html
 pip install pandas-datareader
 ```
 
-3. Download the project3 library **yfinance**
+3. Download the NFA library **yfinance**
 gives you easy access to financial data available on Yahoo Finance
 
 
@@ -80,7 +80,7 @@ pip install yfinance
 ```
 
 
-4. Download the project3 library **yahoofinancials**
+4. Download the NFA library **yahoofinancials**
 
 ```shell
 pip install yahoofinancials
@@ -89,7 +89,7 @@ A python module that returns stock, cryptocurrency, forex, mutual fund, commodit
 
 
 
-5. Download the project3 library **path**
+5. Download the NFA library **path**
 implements path objects as first-class entities, allowing common operations on files to be invoked on those path objects directly.
 
 ```shell
@@ -97,7 +97,7 @@ pip install path
 ```
 
 
-6. Download the project3 library **finta**
+6. Download the NFA library **finta**
 Common financial technical indicators implemented in Pandas. Finta supports over 80 trading indicators 
 
 
@@ -106,7 +106,7 @@ pip install finta
 ```
 
 
-7. Download the project3 library **mplfinance**
+7. Download the NFA library **mplfinance**
 matplotlib utilities for the visualization, and visual analysis, of financial data
 
 
@@ -114,14 +114,14 @@ matplotlib utilities for the visualization, and visual analysis, of financial da
 pip install mplfinance
 ```
 
-8. Download the project3 library **wordcloud**
+8. Download the NFA library **wordcloud**
 A little word cloud generator in Python. 
 
 ```shell
 pip install wordcloud
 ```
 
-9. Download the project3 library **streamlit**
+9. Download the NFA library **streamlit**
 Streamlit’s open-source app framework is the easiest way for data scientists and machine learning engineers to create beautiful, performant apps in only a few hours! All in pure Python. All for free.
 
 ```shell
@@ -129,7 +129,7 @@ pip install streamlit
 ```
 
 
-10. Download the project3 library **datetime**
+10. Download the NFA library **datetime**
 This package provides a DateTime data type, as known from Zope.
 Unless you need to communicate with Zope APIs, you’re probably better off using Python’s built-in datetime module.
 
@@ -138,14 +138,14 @@ pip install datetime
 ```
 
 
-11. Download the project3 library **vaderSentiment**
+11. Download the NFA library **vaderSentiment**
 VADER Sentiment Analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media, and works well on texts from other domains.
 
 ```shell
 pip install vaderSentiment
 ```
 
-12. Download the project3 library **regex**
+12. Download the NFA library **regex**
 This regex implementation is backwards-compatible with the standard ‘re’ module, but offers additional functionality.
 
 ```shell
@@ -153,9 +153,16 @@ pip install regex
 ```
 
 
+13. Download the NFA library **nltk**
+The Natural Language Toolkit (NLTK) is a Python package for natural language processing. NLTK requires Python 3.7, 3.8, 3.9 or 3.10.
+
+```shell
+pip install nltk
+```
 
 
-13. Run the following commands to confirm installation of all project3 packages. Look for version numbers with at least the following versions.  
+
+13. Run the following commands to confirm installation of all NFA packages. Look for version numbers with at least the following versions.  
 
 ```shell
 conda list prophet
@@ -169,6 +176,7 @@ conda list streamlit
 conda list datetime
 conda list vaderSentiment
 conda list regex
+conda list nltk
 
 ```
       
@@ -191,7 +199,8 @@ wordcloud                 1.8.2.2
 streamlit                 1.11.1
 datetime                  4.5.*
 vadersentiment            3.3.2
-regex                    2022.3.2
+regex                     2022.3.2
+nltk                      3.7
 
 ```
 
@@ -225,7 +234,7 @@ If you experience blank plots rendering in your Jupyter Lab preview, try the fol
 
 5. If your browser is Chrome, and you continue to render blank plots after completing the previous 4 steps, try updating Chrome. Instructions for this can be found [here](https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en).
 
-If you have issues with project3 or Jupyter Lab, you may need to update your Conda environment. Follow the steps below to update the environment and then go back to the install guide to complete a fresh installation of project3.
+If you have issues with NFA or Jupyter Lab, you may need to update your Conda environment. Follow the steps below to update the environment and then go back to the install guide to complete a fresh installation of NFA.
 
 1. Deactivate your current Conda environment. This is required in order to update the global Conda environment. Be sure to quit any running applications such as Jupyter prior to deactivating the environment.
 
@@ -239,18 +248,18 @@ If you have issues with project3 or Jupyter Lab, you may need to update your Con
     conda update conda
     ```
 
-3. Create a fresh Conda environment to use with project3.
+3. Create a fresh Conda environment to use with NFA.
 
     ```shell
-    conda create -n project3 python=3.7 anaconda
+    conda create -n NFA python=3.7 anaconda
     ```
 
 4. Activate the new environment.
 
     ```shell
-    conda activate project3
+    conda activate NFA
     ```
 
-5. Install the project3 dependencies following the guide above.
+5. Install the NFA dependencies following the guide above.
 
 ---
