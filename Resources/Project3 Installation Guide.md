@@ -101,7 +101,6 @@ pip install path
 Common financial technical indicators implemented in Pandas. Finta supports over 80 trading indicators 
 
 
-
 ```shell
 pip install finta
 ```
@@ -122,8 +121,41 @@ A little word cloud generator in Python.
 pip install wordcloud
 ```
 
+9. Download the project3 library **streamlit**
+Streamlit’s open-source app framework is the easiest way for data scientists and machine learning engineers to create beautiful, performant apps in only a few hours! All in pure Python. All for free.
 
-8. Run the following commands to confirm installation of all project3 packages. Look for version numbers with at least the following versions.  
+```shell
+pip install streamlit
+```
+
+
+10. Download the project3 library **datetime**
+This package provides a DateTime data type, as known from Zope.
+Unless you need to communicate with Zope APIs, you’re probably better off using Python’s built-in datetime module.
+
+```shell
+pip install datetime
+```
+
+
+11. Download the project3 library **vaderSentiment**
+VADER Sentiment Analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media, and works well on texts from other domains.
+
+```shell
+pip install vaderSentiment
+```
+
+12. Download the project3 library **regex**
+This regex implementation is backwards-compatible with the standard ‘re’ module, but offers additional functionality.
+
+```shell
+pip install regex
+```
+
+
+
+
+13. Run the following commands to confirm installation of all project3 packages. Look for version numbers with at least the following versions.  
 
 ```shell
 conda list prophet
@@ -131,6 +163,13 @@ conda list pandas-datareader
 conda list yfinance
 conda list path
 conda list finta
+conda list mplfinance
+conda list wordcloud
+conda list streamlit
+conda list datetime
+conda list vaderSentiment
+conda list regex
+
 ```
       
       
@@ -144,6 +183,16 @@ conda list finta
 ```text
 prophet                   1.1
 pandas-datareader         0.10.0
+yfinance                  0.1.74
+path                      16.4.0
+finta                     1.3.*
+mplfinance                0.12.9b1
+wordcloud                 1.8.2.2
+streamlit                 1.11.1
+datetime                  4.5.*
+vadersentiment            3.3.2
+regex                    2022.3.2
+
 ```
 
 
