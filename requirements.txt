@@ -6,3 +6,10 @@ yfinance==0.1.74
 pathlib==1.0.1
 prophet==1.1.*
 plotly==5.9.0
+wordcloud==1.8.2.2
+vadersentiment==3.3.2
+regex==2022.3.2
+path==16.4.0
+pandas-datareader==0.10.0
+mplfinance==0.12.9b1
+finta==1.3.*
