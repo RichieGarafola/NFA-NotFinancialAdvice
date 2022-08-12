@@ -161,8 +161,16 @@ pip install nltk
 ```
 
 
+14. Download the NFA library **snscrape**
+snscrape is a scraper for social networking services (SNS). It scrapes things like user profiles, hashtags, or searches and returns the discovered items, e.g. the relevant posts.
 
-13. Run the following commands to confirm installation of all NFA packages. Look for version numbers with at least the following versions.  
+
+```shell
+pip install snscrape
+```
+
+
+15. Run the following commands to confirm installation of all NFA packages. Look for version numbers with at least the following versions.  
 
 ```shell
 conda list prophet
