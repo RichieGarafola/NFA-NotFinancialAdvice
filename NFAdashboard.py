@@ -12,9 +12,15 @@ import yfinance as yf
 
 from pathlib import Path
 
+st.set_page_config(
+    page_title="NFA Dash",
+    page_icon="📊",
+    layout= "wide"    
+)
+
 
 # dashboard title
-st.title("NotFinanialAdvice Streamlit Finance Dashboard")
+st.title("NotFinanialAdvice")
 
 ############################################
 
@@ -31,8 +37,8 @@ dropdown = st.multiselect('Pick your assets', tickers)
 # Start time
 start = st.date_input('Start', value = pd.to_datetime('2020-01-01'))
 
-@st.cache 
 # Relative return of the users deseired stock.
+@st.cache 
 def relativereturn(df):
     rel = df.pct_change()
     cumulativereturn = (1-rel).cumprod() -1
@@ -53,7 +59,7 @@ if len(dropdown) > 0:
 ############################################
 
 # Use the Pathlib libary to set the path to the CSV
-csv_path = Path('./Resources/fundamental_info_df.csv')
+csv_path = Path('Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/fundamental_info_df.csv')
 
 # Use the file path to read the CSV into a DataFrame
 fundamental_info_df = pd.read_csv(csv_path, index_col = 'symbol')
@@ -109,3 +115,7 @@ analysis_dropdown = analysis_dropdown.strip("''")
 
 # Fundamental Analysis of the users choice, dynamically pulled from the API
 st.table(getattr(yf.Ticker(dropdown2),analysis_dropdown))
+
+
+
+# st.caption('Created by Richie Garafola, Mark Staten, Jacob Edelbrock 8/22')
