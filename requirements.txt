@@ -15,4 +15,4 @@ mplfinance==0.12.9b1
 finta==1.3.*
 nltk==3.7
 snscrape==0.4.3.20220106
-
+hvplot 0.8.0
