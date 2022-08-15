@@ -79,6 +79,7 @@ for index, table_row in enumerate(stock_tr):
     # Create a dataframe using the 'title_list'
     finviz_headlines = pd.DataFrame(title_list, columns=[['ticker', 'date', 'time', 'title']])
     
+st.subheader("Most recent 100 Headlines")    
 st.write(finviz_headlines)
     
 # Sentiment calculation based on compound score
@@ -125,6 +126,7 @@ for index, row in finviz_headlines.iterrows():
 title_sentiment_df = pd.DataFrame(title_sent)
 finviz_headlines = finviz_headlines.join(title_sentiment_df)
 
+st.subheader("Sentiment Statistics")  
 st.write(finviz_headlines.describe())
 
 ###
@@ -141,6 +143,7 @@ def word_cloud(text):
     fig.tight_layout(pad=0)
     plt.show()
     st.pyplot(plt)
+st.subheader("Wordcloud for further analysis")  
 word_cloud(finviz_headlines[('title',)].values)
 
 

@@ -14,14 +14,14 @@ nltk.download('vader_lexicon')
 
 st.title("Twitter NLP Scraper")
 # Get user input
-query = st.sidebar.text_input("Search word: ")
+query = st.sidebar.text_input("Search word: ", value="AAPL")
 df=pd.DataFrame()
 
 # As long as the query is valid (not empty or equal to '#')...
 if query != '':
-    number_of_tweets = st.sidebar.text_input("Enter the number of tweets you want to Analyze: ")
+    number_of_tweets = st.sidebar.text_input("Enter the number of tweets you want to Analyze: ",  value=100)
     if number_of_tweets != '' :
-        number_of_days = st.sidebar.text_input("Enter the number of days you want to Scrape Twitter for: ")
+        number_of_days = st.sidebar.text_input("Enter the number of days you want to Scrape Twitter for: ", value=21)
         if number_of_days != '':
                 #Create a list to append tweet data
                 tweets_list = []

@@ -40,13 +40,13 @@ future_dow = model_dow.make_future_dataframe(periods=52, freq="W")
 
 # Make predictions for forecast_dow using the future_dow DataFrame
 forecast_dow = model_dow.predict(future_dow).set_index('ds')
-foreccast_dow_figures = forecast_dow.reset_index()
+forecast_dow_figures = forecast_dow.reset_index()
 
 # Plot predictions for our forecast_dow DataFrame for the 52 week period 
 forecast_dow_predictions = forecast_dow[['yhat', 'yhat_lower', 'yhat_upper']].iloc[-52:,:]
 
 # Use the plot_components function to visualize the forecast results 
-figures = model_dow.plot_components(foreccast_dow_figures)
+figures = model_dow.plot_components(forecast_dow_figures)
 
 # # Set the datetime index of the forecast_dow data, using the ds column
 # forecast_dow_index = forecast_dow.set_index("ds")
@@ -73,7 +73,7 @@ forecast_future_month = forecast_future_month.rename(
 ############################################
 # plot 1 not sccaled 
 # st.title("Prophet Forecast")
-# st.pyplot(model_dow.plot(foreccast_dow_figures))
+# st.pyplot(model_dow.plot(forecast_dow_figures))
 
 # plot 2 not scaled
 # st.title(f"{dropdown} Prophet Forecast Predictions")
@@ -90,26 +90,18 @@ fig, ax = plt.subplots()
 ax.plot(forecast_dow_predictions)
 ax.legend(['yhat', 'yhat_lower', 'yhat_upper'])
 
-col1, col2, col3 = st.columns(3)
 
-col1.subheader(f"{dropdown} Prophet Forecast")
-col1.pyplot(model_dow.plot(foreccast_dow_figures))
+st.subheader(f"{dropdown} Prophet Forecast")
+st.pyplot(model_dow.plot(forecast_dow_figures))
 
-col2.subheader(f"{dropdown} Prophet Forecast Predictions")
-col2.pyplot(fig)
+st.subheader(f"{dropdown} Prophet Forecast Statistics")
+st.pyplot(fig)
 
-col3.subheader("Prophet Trends")
-col3.pyplot(figures)
+st.subheader("Prophet Trends")
+st.pyplot(figures)
 
-
-
-col1, col2 = st.columns(2)
-
-col1.subheader("3 week forecast")
-col1.write(forecast_future_month)
-
-col2.subheader("Average Forecasted price for the next 21 days")
-col2.write(forecast_future_month.mean())
+st.subheader("21 Day Forecast")
+st.write(forecast_future_month)
 
 
 # # Review the last five rows of the DataFrame

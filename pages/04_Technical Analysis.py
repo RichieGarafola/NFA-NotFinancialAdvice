@@ -20,6 +20,11 @@ tickers_dropdown = st.selectbox('Choose a stock ticker', tickers)
 
 ohlc = web.DataReader(tickers_dropdown, 'yahoo') #, start='2019-09-10', end='2019-10-09')
 ohlc = ohlc.rename(columns={'High':'high', 'Low':'low', 'Open':'open', 'Close':'close', 'Volume':'volume', 'Adj Close':'adj close'})
+
+
+ohlc = ohlc.sort_index(ascending=False)
+
+
 moving_average_df = ohlc[['close']]
 oscillator_df = ohlc[['close']]
 
