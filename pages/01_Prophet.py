@@ -6,6 +6,7 @@ from plotly import graph_objs as go
 from prophet import Prophet
 import yfinance as yf
 
+
 st.set_page_config(
     page_title="NotFinancialAdvice - Prophet",
     page_icon="📊",
