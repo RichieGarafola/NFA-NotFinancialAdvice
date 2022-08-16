@@ -24,9 +24,9 @@ contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply
         uint256 public constant SILVER = 1;
         uint256 public constant BRONZE = 2;
     constructor() ERC1155("") {
-        _mint(msg.sender, GOLD, 20, "");
-        _mint(msg.sender, SILVER, 50, "");
-        _mint(msg.sender, BRONZE, 100, "");
+        //_mint(msg.sender, GOLD, 20, "");
+       // _mint(msg.sender, SILVER, 50, "");
+      //  _mint(msg.sender, BRONZE, 100, "");
     }
     function setURI(
         string memory newuri
@@ -87,9 +87,9 @@ contract NFAToken is ERC1155, Ownable, Pausable, ERC1155Burnable, ERC1155Supply
             amounts, 
             data
             );
-        require(
-            from == address(0) || to == address(0), 
-            "Not allowed to transfer token"
-            );
+        //require(
+         //   from == address(0) || to == address(0), 
+         //   "Not allowed to transfer token"
+         //   );
     }
 }
