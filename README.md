@@ -6,4 +6,4 @@ Final capstone project for ASU Fintech Bootcamp
 Monitor my progress below:
 
 
-https://richiegarafola-project3-nfadashboard-fjcosq.streamlitapp.com/
+https://richiegarafola-nfa-notfinancialadvice-home-395c34.streamlitapp.com/
