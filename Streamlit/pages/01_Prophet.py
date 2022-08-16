@@ -1,9 +1,14 @@
-import streamlit as st # web development
-import pandas as pd # read csv, df manipulation
-import matplotlib.pyplot as plt # plots 
-import datetime as dt # Date time format
+# web development
+import streamlit as st
+# read csv, df manipulation
+import pandas as pd 
+# Visualize Results as plots
+import matplotlib.pyplot as plt
+# Date time format
+import datetime as dt 
 from plotly import graph_objs as go
 from prophet import Prophet
+# Pull in financial information
 import yfinance as yf
 
 
