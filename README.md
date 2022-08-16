@@ -1,6 +1,8 @@
 # Fintech-Final-Project 
-#Project Proposal
+# NotFinancialAdvice
 Project 3 Richie Garafola - Mark Staten - Jacob Edelbrock 07.26.2022 ─
+
+https://richiegarafola-nfa-notfinancialadvice-home-395c34.streamlitapp.com/
 
 ## Overview
 Create a non transferable NFT that will allow users access to our application deployed on Streamlit Cloud. The application will provide a dashboard that users can interact with displaying useful day trading metrics and a forecast of asset prices. We will provide access to DOW 30 but can expand in the future if we decide to. We will collect the end users activity in the application and save activity to a SQL database for the purpose of future development and user behavior/activity research.
