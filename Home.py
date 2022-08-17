@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 st.write("# Welcome to NotFinancialAdvice! 👋")
-st.image("./Streamlit/Resources/LandingPage.jpg")
+st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/LandingPage.jpg")
 st.markdown(
     """
     This is your one stop shop for all analysis as it relates to the Stock Markets. 
@@ -29,23 +29,23 @@ st.markdown(
 )
 
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs(["Agenda", "Executive Summary", "High Level Architechtural Diagram", "NFT Token Gating: Proof of Concept", "Financial Analysis Dashboard", "Project Approach", "Oracle Database", "Next Steps", "Results and Conclusions"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs(["Agenda", "Executive Summary", "High Level Architechtural Diagram", "NFT Token Gating: Proof of Concept", "Financial Analysis Dashboard", "Oracle Database", "Project Approach",  "Next Steps", "Results and Conclusions"])
 
 with tab1:
     st.header("Agenda")
-    st.image("./Streamlit/Resources/agenda.jpg")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/agenda.jpg")
 
 with tab2:
     st.header("Executive Summary")
-    st.image("./Streamlit/Resources/executive_summary.jpg")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/executive_summary.jpg")
 
 with tab3:
     st.header("High Level Architechtural Diagram")
-    st.image("./Streamlit/Resources/high_level_diagram.png")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/high_level_diagram.png")
     
 with tab4:
     st.header("NFT Token Gating: Proof of Concept")
-    st.image("./Streamlit/Resources/nft_token_gating.png")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/nft_token_gating.png")
     st.markdown("""
     [Part 1 NFA ERC 1155 Contract and Mint](https://www.youtube.com/watch?v=jiKPlbJcd3Q)
     
@@ -57,22 +57,22 @@ with tab4:
 
 with tab5:
     st.header("Financial Analysis Dashboard")
-    st.image("./Streamlit/Resources/dashboardoverview.png")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/dashboardoverview.png")
     
 with tab6:
     st.header("Oracle Database")
-    st.image("./Streamlit/Resources/oracle_database.png")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/oracle_database.png")
     
 with tab7:
     st.header("Project Approach")
-    st.image("./Streamlit/Resources/project_approach.png")    
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/project_approach.png")    
     
 with tab8:
     st.header("Next Steps")
-    st.image("./Streamlit/Resources/next_steps.png")    
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/next_steps.png")    
 
 with tab9:
     st.header("Results and Conclusions")
-    st.image("./Streamlit/Resources/results.jpg")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/results.jpg")
 
 
