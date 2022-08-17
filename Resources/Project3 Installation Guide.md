@@ -275,17 +275,17 @@ If you experience blank plots rendering in your Jupyter Lab preview, try the fol
 
     - If using Chrome, you can do this by right clicking and choosing `Inspect` from the drop menu.
     
-    ![clear_browser_cache1](../Images/clear_browser_cache1.PNG)
+    ![clear_browser_cache1](../Resources/clear_browser_cache1.PNG)
 
     - Next, hold down click on the browser reload button which will cause another drop down menu to appear.  From this menu select `Empty Cache and Hard Reload`.
 
-      ![clear_browser_cache2](../Images/clear_browser_cache2.PNG)
+      ![clear_browser_cache2](../Resources/clear_browser_cache2.PNG)
 
 3. Then clear the Kernel cache:
 
     - Click the `Kernel` drop down menu inside Jupyter Lab.  From this menu, click `Restart Kernel and Clear Outputs`.
 
-      ![clear_kernel_cache](../Images/clear_kernel_cache.PNG)
+      ![clear_kernel_cache](../Resources/clear_kernel_cache.PNG)
 
 4. After these steps are completed, re-run your notebook. 
 
