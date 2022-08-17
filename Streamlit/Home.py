@@ -47,7 +47,7 @@ with tab4:
     st.header("NFT Token Gating: Proof of Concept")
     st.image("./Streamlit/Resources/nft_token_gating.png")
     st.markdown("""
-    [NFA ERC1155 Demonstration](https://www.youtube.com/playlist?list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ)
+    [NFA ERC1155 Demonstration](https://www.youtube.com/playlist?list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ""")
 
 with tab5:
     st.header("Financial Analysis Dashboard")
