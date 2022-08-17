@@ -47,13 +47,7 @@ with tab4:
     st.header("NFT Token Gating: Proof of Concept")
     st.image("./Streamlit/Resources/nft_token_gating.png")
     st.markdown("""
-    [Part 1 NFA ERC 1155 Contract and Mint](https://www.youtube.com/watch?v=jiKPlbJcd3Q)
-    
-    [Part 2 NFA ERC1155 Etherscan Mint Transaction](https://www.youtube.com/watch?v=3KPBPvwWlYA)
-    
-    [Part 3 NFA ERC1155 Safe Transfer NFT](https://www.youtube.com/watch?v=Z6vmJKkdzRo)
-    
-    [Part 4 NFA ERC 1155 Etherscan NFT Transfer Details](https://www.youtube.com/watch?v=NP3PUB-6gyQ)""")
+    [NFA ERC1155 Demonstration](https://www.youtube.com/playlist?list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ)
 
 with tab5:
     st.header("Financial Analysis Dashboard")
