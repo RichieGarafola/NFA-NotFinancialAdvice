@@ -122,3 +122,5 @@ st.table(getattr(yf.Ticker(dropdown2),analysis_dropdown))
 
 
 # st.caption('Created by Richie Garafola, Mark Staten, Jacob Edelbrock 8/22')
+
+
