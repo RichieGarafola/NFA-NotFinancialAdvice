@@ -134,3 +134,6 @@ with col1:
 with col2:
     st.header("Oscillator")
     st.plotly_chart(oscillator_fig)
+
+    
+    
