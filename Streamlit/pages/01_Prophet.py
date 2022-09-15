@@ -116,3 +116,4 @@ st.write(forecast_future_month)
 # # Display the average forecasted price 
 # st.write("Average Forecasted price for the last 20 days", forecast_future_month.mean())
 
+
