@@ -144,5 +144,3 @@ st.write('Wordcloud for ' + query)
 word_cloud(df['Text'].values)
 
 
-
-
