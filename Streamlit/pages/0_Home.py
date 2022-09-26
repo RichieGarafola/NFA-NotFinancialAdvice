@@ -24,4 +24,3 @@ st.markdown(
     - [Richie Garafola](https://www.linkedin.com/in/richie-garafola)
 """
 )
-
