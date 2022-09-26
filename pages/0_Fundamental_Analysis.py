@@ -104,7 +104,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.table(list[f'{dropdown3}'].nlargest(10))
 with col2:
-    col2.subheader("DOW 30 Stock Comparison")
+    col2.subheader("Top Stock Comparison")
     st.bar_chart(list[f'{dropdown3}'])
 
         
