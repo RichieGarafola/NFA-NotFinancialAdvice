@@ -103,17 +103,6 @@ fig.update_xaxes(rangeslider_visible=False)
 # st.dataframe(ohlc)
 
 st.plotly_chart(fig, use_container_width=True)
-
-# st.set_option('deprecation.showPyplotGlobalUse', False)
-# initial_ohlc = mpf.plot(ohlc.tail(120), type = 'candle', style = 'yahoo')
-
-# col1, col2 = st.columns([3, 1])
-
-# col1.subheader(f"{tickers_dropdown} Daily Candlestick Chart")
-# col1.pyplot(initial_ohlc)
-
-# col2.subheader(f"{tickers_dropdown} data")
-# col2.write(ohlc)
 ###############################################
 
 moving_average_dictionary = { 'SMA':'SimpleMovingAverage', 'SMM':'SimpleMovingMedian', 'SSMA':'SmoothedSimpleMovingAverage', 'EMA':'ExponentialMovingAverage', 'DEMA':'DoubleExponentialMovingAverage', 'TEMA':'TripleExponentialMovingAverage', 'TRIMA':'TriangularMovingAverage', 'VAMA':'VolumeAdjustedMovingAverage', 'KAMA':'KaufmansAdaptiveMovingAverage', 'ZLEMA':'ZeroLagExponentialMovingAverage', 'WMA':'WeightedMovingAverage', 'HMA':'HullMovingAverage', 'EVWMA':'ElasticVolumeMovingAverage', 'SMMA':'SmoothedMovingAverage', 'FRAMA':'FractalAdaptiveMovingAverage'}
