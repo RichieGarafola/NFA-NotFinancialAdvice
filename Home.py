@@ -44,7 +44,7 @@ with tab3:
     
 with tab4:
     st.header("NFT Token Gating: Proof of Concept")
-    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/nft_token_gating.png")
+    st.image("./Streamlit/Resources/nft_token_gating.png")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.video("https://www.youtube.com/watch?v=jiKPlbJcd3Q&list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ&index=1")
