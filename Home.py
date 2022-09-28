@@ -44,9 +44,18 @@ with tab3:
     
 with tab4:
     st.header("NFT Token Gating: Proof of Concept")
-    st.image("./Streamlit/Resources/nft_token_gating.png")
+    st.image("Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/nft_token_gating.png")
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.video("https://www.youtube.com/watch?v=jiKPlbJcd3Q&list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ&index=1")
+    with col2:
+        st.video("https://www.youtube.com/watch?v=3KPBPvwWlYA&list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ&index=2")
+    with col3:
+        st.video("https://www.youtube.com/watch?v=Z6vmJKkdzRo&list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ&index=3")
+    with col4:
+        st.video("https://www.youtube.com/watch?v=NP3PUB-6gyQ&list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ&index=4")
     st.markdown("""
-    [NFA ERC1155 Demonstration](https://www.youtube.com/playlist?list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ""")
+    [NFA ERC1155 Demonstration](https://www.youtube.com/playlist?list=PLDNke-5WO5QfRG5FaB9-4Ly2WIRSOpuxJ""") 
 
 with tab5:
     st.header("Financial Analysis Dashboard")
