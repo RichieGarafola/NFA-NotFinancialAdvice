@@ -22,8 +22,7 @@ st.markdown(
     
     ### Feel Free to connect!
     - [Richie Garafola](https://www.linkedin.com/in/richie-garafola)
-    - [Jacob Edelbrock](https://www.linkedin.com/in/jacob-edelbrock-resume/)
-    - [Mark Staten](https://www.linkedin.com/in/mark-staten-b9b3885/)
+
         
 """
 )
