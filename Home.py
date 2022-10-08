@@ -44,7 +44,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
         
-local_css("../../style/style.css")
+local_css("./style/style.css")
 
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs(["Agenda", "Executive Summary", "High Level Architechtural Diagram", "NFT Token Gating: Proof of Concept", "Financial Analysis Dashboard", "Oracle Database", "Project Approach",  "Next Steps", "Results and Conclusions"])
