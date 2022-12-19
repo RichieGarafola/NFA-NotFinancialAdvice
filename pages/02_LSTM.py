@@ -25,7 +25,8 @@ tickers = (dow + sp500)
 tickers_dropdown = st.selectbox('Choose a stock ticker', tickers)
 
 # Load the stocks data
-df = web.DataReader(tickers_dropdown, 'yahoo')[['Close']]
+# df = web.DataReader(tickers_dropdown, 'yahoo')[['Close']]
+df = yf.download(tickers_dropdown)[['Close']]
 
 # The function has the following parameters:
 # - df: The original DataFrame with the time series data.
