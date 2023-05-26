@@ -7,7 +7,7 @@ from datetime import date
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM
-
+ 
 # Disable warning about Pyplot Global Use
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -88,7 +88,7 @@ def main():
     # Plot the results
     st.write("### Stock Price Predictions")
     fig, ax = plt.subplots(figsize=(12, 6))
-    ax.plot(df.index[train_size+1:], df.values[train_size+1:], label='Actual')
+    ax.plot(df.index[train_size+1:], df[train_size+1:].values, label='Actual')
     ax.plot(df.index[train_size+1:], predictions, label='Predicted')
     ax.set_xlabel('Date')
     ax.set_ylabel('Price')
