@@ -18,5 +18,4 @@ nltk==3.7
 snscrape==0.4.3.20220106
 hvplot==0.8.0
 sklearn==0.23.2
-tensorflow==2.11.0
-protobuf==3.9.2
+tensorflow==2.10.0
