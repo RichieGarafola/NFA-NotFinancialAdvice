@@ -71,7 +71,7 @@ if len(dropdown) > 0:
 ############################################
 
 # Use the Pathlib libary to set the path to the CSV
-csv_path = Path('Desktop/Github/Project3/Project3/Richie/Streamlit/Resources/fundamental_info_df.csv')
+csv_path = Path('./Streamlit/Resources/fundamental_info_df.csv')
 
 # Read the CSV file containing fundamental information about the companies and set the index column to 'symbol'
 fundamental_info_df = pd.read_csv(csv_path, index_col='symbol')
